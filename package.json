@@ -1,0 +1,50 @@
+{
+    "name": "@fluejs/txtag",
+    "version": "1.0.0",
+    "description": "Dynamic text templating utility",
+    "repository": "git@github.com:fluejs/txtag.git",
+    "author": "fl3nkey",
+    "license": "UNLICENSED",
+    "sideEffects": false,
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.mjs"
+        },
+        "./vue": {
+            "types": "./dist/vue.d.ts",
+            "require": "./dist/vue.cjs",
+            "import": "./dist/vue.mjs"
+        }
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "unbuild",
+        "lint:check": "eslint ./src/**/*",
+        "types:check": "tsc",
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs",
+        "docs:preview": "vitepress preview docs",
+        "prepublishOnly": "yarn run lint:check & yarn run types:check & yarn run build"
+    },
+    "devDependencies": {
+        "eslint": "8.57.1",
+        "eslint-config-fl3nkey-base": "1.0.4",
+        "eslint-config-fl3nkey-typescript": "1.0.3",
+        "eslint-config-fl3nkey-vue3": "1.0.5",
+        "handlebars": "^4.7.8",
+        "tsc": "2.0.4",
+        "typescript": "5.2.2",
+        "unbuild": "2.0.0",
+        "vitepress": "1.5.0",
+        "vitepress-plugin-tabs": "^0.5.0",
+        "vue": "3.5.13"
+    },
+    "packageManager": "yarn@1.22.22"
+}
